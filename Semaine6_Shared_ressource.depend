@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1646599569 source:/home/margauxhanut/ProjectC/Semaine6_Shared_ressource/main.c
+1646748229 source:/home/margauxhanut/ProjectC/Semaine6_Shared_ressource/main.c
 	<stdio.h>
 	<stdlib.h>
 	<pthread.h>
@@ -7,7 +7,7 @@
 	<string.h>
 	"sharedressource.h"
 
-1646570685 /home/margauxhanut/ProjectC/Semaine6_Shared_ressource/sharedressource.h
+1646748354 /home/margauxhanut/ProjectC/Semaine6_Shared_ressource/sharedressource.h
 	<stdio.h>
 	<stdlib.h>
 	<pthread.h>
