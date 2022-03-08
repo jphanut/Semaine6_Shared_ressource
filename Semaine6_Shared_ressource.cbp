@@ -31,14 +31,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Linker>
-			<Add library="/usr/lib64/libcunit.so" />
-		</Linker>
 		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="sharedressource.h" />
-		<Unit filename="unitest.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />

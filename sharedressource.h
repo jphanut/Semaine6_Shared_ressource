@@ -10,7 +10,7 @@
 
 #define DATA_SIZE 20
 #define BUFFER_SIZE 5
-#define SLEEP_TIME_IN_SECONDS 1
+#define SLEEP_TIME_IN_SECONDS 2
 
 typedef struct data {
     int longitude;

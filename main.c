@@ -68,14 +68,14 @@ int start_consumer(data_parameter_t * threaddata) {
     int buffer_size = BUFFER_SIZE;
     int data_size = DATA_SIZE;
     for (int i=0; i < data_size; i++) {
-        usleep(((rand() % (SLEEP_TIME_IN_SECONDS)) + 1) * 100000);
+        usleep(((rand() % (SLEEP_TIME_IN_SECONDS+8)) + 1) * 1000000);
         int rc = 0;
         int nbr_elems_in_buffer = 0;
         if (0 != (rc = pthread_mutex_lock(threaddata->ptr_mutex))) return -1;
         nbr_elems_in_buffer = * threaddata->in;
         if (0 != (rc = pthread_mutex_unlock(threaddata->ptr_mutex))) return -1;
         while ( nbr_elems_in_buffer ==  0) {
-            usleep(((rand() % (SLEEP_TIME_IN_SECONDS)) + 1) * 100000);
+            usleep(((rand() % (SLEEP_TIME_IN_SECONDS+8)) + 1) * 1000000);
             if (0 != (rc = pthread_mutex_lock(threaddata->ptr_mutex))) return -1;
             nbr_elems_in_buffer = * threaddata->in;
             if (0 != (rc = pthread_mutex_unlock(threaddata->ptr_mutex))) return -1;
@@ -94,7 +94,7 @@ int start_producer(data_parameter_t * threaddata) {
     int buffer_size = BUFFER_SIZE;
     int data_size = DATA_SIZE;
     for (int i=0; i < data_size; i++) {
-        usleep(((rand() % (SLEEP_TIME_IN_SECONDS)) + 1) * 100000);
+        usleep(((rand() % (SLEEP_TIME_IN_SECONDS)) + 1) * 1000000);
         data_t* ptr = ptr_data+i;
         int rc = 0;
         int nbr_elems_in_buffer = 0;
@@ -102,7 +102,7 @@ int start_producer(data_parameter_t * threaddata) {
         nbr_elems_in_buffer = * threaddata->in;
         if (0 != (rc = pthread_mutex_unlock(threaddata->ptr_mutex))) return -1;
         while ( nbr_elems_in_buffer ==  buffer_size) {
-            usleep(((rand() % (SLEEP_TIME_IN_SECONDS)) + 1) * 100000);
+            usleep(((rand() % (SLEEP_TIME_IN_SECONDS)) + 1) * 1000000);
             if (0 != (rc = pthread_mutex_lock(threaddata->ptr_mutex))) return -1;
             nbr_elems_in_buffer = * threaddata->in;
             if (0 != (rc = pthread_mutex_unlock(threaddata->ptr_mutex))) return -1;
@@ -132,8 +132,8 @@ int main()
 
     rc = unittest(&first, &last, &nbr_elems_in_buffer, &buffer_size, arr_data);
 
-    rc = test_with_2threads(&first, &last, &nbr_elems_in_buffer, &buffer_size, arr_data, ptr_buffer);
-    if ( rc == 0 ) printf("Test Consumer Producer with threads succeeded\n");
+    //rc = test_with_2threads(&first, &last, &nbr_elems_in_buffer, &buffer_size, arr_data, ptr_buffer);
+    //if ( rc == 0 ) printf("Test Consumer Producer with threads succeeded\n");
 
 
     free(arr_data);
