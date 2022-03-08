@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1646599569 source:/home/margauxhanut/ProjectC/Semaine6_Shared_ressource/main.c
+	<stdio.h>
+	<stdlib.h>
+	<pthread.h>
+	<unistd.h>
+	<string.h>
+	"sharedressource.h"
+
+1646570685 /home/margauxhanut/ProjectC/Semaine6_Shared_ressource/sharedressource.h
+	<stdio.h>
+	<stdlib.h>
+	<pthread.h>
+	<unistd.h>
+	<string.h>
+
+1646599536 source:/home/margauxhanut/ProjectC/Semaine6_Shared_ressource/unitest.c
+	"sharedressource.h"
+	"CUnit/Basic.h"
+
